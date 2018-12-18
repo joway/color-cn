@@ -1,5 +1,7 @@
 # Color-CN
 
+<p align="center"><a href="https://se.joway.io/" target="_blank"><img width="100%" src="coloring.png" alt="logo"></a></p>
+
 ## Purpose
 
 Spread Chinese classical colors to the world.
