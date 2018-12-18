@@ -4,9 +4,11 @@
 
 Spread Chinese classical colors to the world.
 
-You can pick the color you like on [Coloring China](https://se.joway.io/).
+You can pick the color on [Coloring China](https://se.joway.io/).
 
 ## Usage
+
+### Css
 
 ```html
 <link rel="stylesheet" href="/lib/color-cn.min.css" />
@@ -14,6 +16,17 @@ You can pick the color you like on [Coloring China](https://se.joway.io/).
 // ...
 
 <div class="anyuzi"></div>
+<div class="bg-anyuzi"></div>
+```
+
+### Scss
+
+`/lib/color-cn.scss`:
+
+```scss
+.mycls {
+  color: $zhuganzi;
+}
 ```
 
 ## Download

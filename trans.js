@@ -56,8 +56,8 @@ function main() {
     const cnName = color["name"];
     const enName = color["pinyin"];
     const hexCode = color["hex"];
-    const colorDef = `// ${cnName}\n$${enName}: ${hexCode};\n`;
-    const clsDef = `// ${cnName}\n.${enName} {\n${tab}color: $${enName};\n}\n\n`;
+    const colorDef = `$${enName}: ${hexCode};\n`;
+    const clsDef = `.${enName} {\n${tab}color: $${enName};\n}\n.bg-${enName} {\n${tab}background-color: $${enName};\n}\n`;
     colorScss += colorDef;
     clsScss += clsDef;
     colorsData.push({
