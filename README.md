@@ -19,7 +19,7 @@ You can pick the color on [Coloring China](https://se.joway.io/).
 <div class="bg-anyuzi"></div>
 ```
 
-### Scss
+### Sass
 
 `/lib/color-cn.scss`:
 
