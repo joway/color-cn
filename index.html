@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="shortcut icon" href="/coloring.png" type="image/x-png" />
     <title>Coloring China ! | 色染中国</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
@@ -16,9 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|ZCOOL+QingKe+HuangYou"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="/lib/color-cn.min.css" />
-
     <style>
       body {
         font-family: "Noto Sans TC", sans-serif;
@@ -30,7 +30,6 @@
       }
       .header {
         margin-top: 12px;
-        margin-bottom: 32px;
       }
       .logo {
         width: 100px;
@@ -39,8 +38,18 @@
         font-size: 3em;
         font-family: "ZCOOL QingKe HuangYou", cursive;
       }
+      .desc {
+        margin-bottom: 20px;
+      }
+      .desc a {
+        text-decoration: underline;
+        font-weight: 600;
+      }
       .line {
         margin: 12px 0;
+      }
+      .lines {
+        margin-bottom: 100px;
       }
       .color-bar {
         width: 100%;
@@ -53,6 +62,8 @@
         text-decoration: none;
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <div id="app" :style="`background-color: ${backColor}`">
@@ -62,14 +73,22 @@
         >
           <div class="row center-xs middle-xs header">
             <div class="col-sm-3 col-xs-6">
-              <img class="logo" src="/coloring.png" alt="logo" />
+              <a href="/"><img class="logo" src="/coloring.png" alt="logo"/></a>
             </div>
             <div class="col-sm-9 col-xs-6">
               <span class="title"><a href="/">Coloring China</a></span>
             </div>
           </div>
-
-          <div class="row">
+          <div class="row end-xs desc">
+            <div class="col-xs-12">
+              <span
+                ><a href="https://github.com/joway/color-cn" target="_blank"
+                  >@Github</a
+                ></span
+              >
+            </div>
+          </div>
+          <div class="row lines">
             <div class="col-xs-12">
               <div v-for="color in colors" class="row line">
                 <div class="col-sm-2 col-xs-6">{{ color.cnName }}</div>
