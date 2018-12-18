@@ -22,6 +22,6 @@ You can pick the color you like on [Coloring China](https://se.joway.io/).
 - [color-cn.min.css](https://se.joway.io/lib/color-cn.min.css)
 - [color-cn.scss](https://se.joway.io/lib/color-cn.scss)
 
-## Reference
+## Acknowledgements
 
 - [中国色](http://zhongguose.com/)
