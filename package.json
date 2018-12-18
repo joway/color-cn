@@ -1,0 +1,17 @@
+{
+  "name": "color-cn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "trans.js",
+  "scripts": {
+    "build": "rm -rf ./lib/* && npm run build-scss && npm run build-min-css && npm run build-css",
+    "build-min-css": "sass ./lib/color-cn.scss -s compressed > ./lib/color-cn.min.css",
+    "build-css": "sass ./lib/color-cn.scss > ./lib/color-cn.css",
+    "build-scss": "node ./trans.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.15.2"
+  }
+}

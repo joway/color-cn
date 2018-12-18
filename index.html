@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/coloring.png" type="image/x-png" />
+    <title>Coloring China ! | 色染中国</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|ZCOOL+QingKe+HuangYou"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/lib/color-cn.min.css" />
+
+    <style>
+      body {
+        font-family: "Noto Sans TC", sans-serif;
+        margin: 0;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+      .header {
+        margin-top: 12px;
+        margin-bottom: 32px;
+      }
+      .logo {
+        width: 100px;
+      }
+      .title {
+        font-size: 3em;
+        font-family: "ZCOOL QingKe HuangYou", cursive;
+      }
+      .line {
+        margin: 12px 0;
+      }
+      .color-bar {
+        width: 100%;
+        height: 32px;
+      }
+      .color-bar a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" :style="`background-color: ${backColor}`">
+      <div class="row">
+        <div
+          class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 col-md-6 col-md-offset-3"
+        >
+          <div class="row center-xs middle-xs header">
+            <div class="col-sm-3 col-xs-6">
+              <img class="logo" src="/coloring.png" alt="logo" />
+            </div>
+            <div class="col-sm-9 col-xs-6">
+              <span class="title"><a href="/">Coloring China</a></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div v-for="color in colors" class="row line">
+                <div class="col-sm-2 col-xs-6">{{ color.cnName }}</div>
+                <div class="col-sm-2 col-xs-6">{{ color.hexCode }}</div>
+                <div
+                  class="col-sm-8 color-bar"
+                  :style="`background-color: ${color.hexCode}`"
+                >
+                  <a
+                    :href="`#${color.enName}`"
+                    v-on:click="selectColor(color)"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var colors = [];
+      var app = new Vue({
+        el: "#app",
+        data: {
+          colors,
+          backColor: "#fff"
+        },
+        methods: {
+          selectColor: function(color) {
+            this.backColor = color.hexCode;
+          }
+        }
+      });
+
+      var r = new XMLHttpRequest();
+      r.open("GET", "lib/colors.json", true);
+      r.onreadystatechange = function() {
+        if (r.readyState != 4 || r.status != 200) return;
+        var data = JSON.parse(r.responseText);
+        app.colors = data;
+      };
+      r.send();
+    </script>
+  </body>
+</html>
