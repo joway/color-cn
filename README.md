@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Spread Chinese classical colors to the world.
+Spread Chinese traditional colors to the world.
 
 You can pick the color on [Coloring China](https://se.joway.io/).
 
